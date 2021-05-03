@@ -8,6 +8,7 @@ var commentsSchema = new mongoose.Schema(
         newid: { type : String , unique : false, required : true, default: null },
         owner: { type : String , unique : false, required : true, default: null },
         addtime: { type: Date, default: Date.now },
+        vote: { type : Number , default: 0 },
     }
 );
 

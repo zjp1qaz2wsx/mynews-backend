@@ -87,4 +87,20 @@ router.delete('/:id', function(req, res, next) {
   });
 })
 
+//PUT 修改指定new
+router.put('/:id', function(req, res, next) {
+  User.findByIdAndUpdate(req.params.id , req.body, function(err, data) {
+    if(err) {
+      return next(err);
+    } else {
+      res.json(
+        {
+          msg: "success",
+          result: data
+        }
+      )
+    }
+  });
+})
+
 module.exports = router;

@@ -6,6 +6,7 @@ var usersSchema = new mongoose.Schema(
     {
         username: String,
         password: String,
+        isadmin: { type : Boolean , unique : false, required : true, default: false },
     }
 );
 
